@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
+<title>Worksheet: Narrative Text</title>
+<style>
+  :root{
+    --navy:#1e3a5f;
+    --coral:#e8734a;
+    --cream:#fdf8f0;
+    --sage:#7c9885;
+    --gold:#e0a951;
+    --line:#d8cdb8;
+    --ink:#2b2b2b;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:'Georgia','Times New Roman',serif;
+    background:var(--cream);
+    color:var(--ink);
+    margin:0;
+    padding:0 0 60px;
+    line-height:1.6;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+  }
+  html{-webkit-text-size-adjust:100%;}
+  .sheet{max-width:850px;margin:0 auto;padding:30px 36px;overflow-x:hidden;}
+
+  header.top{
+    background:var(--navy);
+    color:#fff;
+    padding:26px 36px;
+    border-bottom:8px solid var(--coral);
+  }
+  header.top h1{margin:0 0 6px;font-size:1.7em;letter-spacing:.5px;}
+  header.top p{margin:0;font-size:.95em;opacity:.85;font-family:Arial,sans-serif;}
+
+  .table-scroll{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:4px;}
+  .table-scroll table{margin-bottom:0;}
+
+  .idbox{
+    display:flex;flex-wrap:wrap;gap:14px 30px;
+    background:#fff;border:1px solid var(--line);border-radius:8px;
+    padding:14px 20px;margin:22px 0;font-family:Arial,sans-serif;font-size:.92em;
+  }
+  .idbox span{border-bottom:1px dotted #999;padding:2px 6px 2px 2px;min-width:140px;display:inline-block;}
+
+  .groupbanner{
+    background:#fff4e8;border:2px solid var(--coral);border-radius:10px;
+    padding:16px 22px;margin-bottom:24px;font-family:Arial,sans-serif;font-size:.95em;
+  }
+  .groupbanner b{color:var(--navy);}
+
+  .stage{
+    margin-top:34px;
+  }
+  .stage-label{
+    display:inline-block;
+    background:var(--coral);
+    color:#fff;
+    font-family:Arial,sans-serif;
+    font-weight:bold;
+    font-size:.75em;
+    letter-spacing:1px;
+    padding:4px 12px;
+    border-radius:20px;
+    margin-bottom:8px;
+  }
+  .stage h2{
+    margin:2px 0 4px;
+    color:var(--navy);
+    font-size:1.35em;
+    border-bottom:3px solid var(--gold);
+    padding-bottom:6px;
+  }
+  .stage .desc{
+    font-family:Arial,sans-serif;
+    font-size:.88em;
+    color:#555;
+    font-style:italic;
+    margin-bottom:16px;
+  }
+
+  .task{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:18px 22px;
+    margin-bottom:18px;
+  }
+  .task-title{
+    font-family:Arial,sans-serif;
+    font-weight:bold;
+    color:var(--navy);
+    margin-bottom:8px;
+    font-size:1.02em;
+  }
+  .task-title .num{
+    background:var(--navy);color:#fff;border-radius:50%;
+    display:inline-flex;align-items:center;justify-content:center;
+    width:24px;height:24px;font-size:.8em;margin-right:8px;
+  }
+
+  .storybox{
+    background:#fbf3e3;
+    border-left:5px solid var(--gold);
+    padding:16px 20px;
+    border-radius:6px;
+    margin-bottom:16px;
+    font-size:.98em;
+  }
+  .storybox p{margin:0 0 10px;}
+  .storybox p:last-child{margin-bottom:0;}
+  .storybox .parano{
+    color:var(--coral);font-weight:bold;font-family:Arial,sans-serif;font-size:.8em;
+  }
+
+  .pemantik{
+    background:linear-gradient(135deg,#fff 60%, #fdeee2);
+    border:2px dashed var(--coral);
+    border-radius:10px;
+    padding:20px 24px;
+  }
+  .pemantik ol{margin:0;padding-left:22px;}
+  .pemantik li{margin-bottom:14px;}
+  .answer-line{
+    display:block;border-bottom:1px solid #999;height:22px;margin-top:4px;
+  }
+
+  table{width:100%;min-width:420px;border-collapse:collapse;font-family:Arial,sans-serif;font-size:.92em;}
+  table th,table td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;}
+  table th{background:var(--navy);color:#fff;}
+  table tr:nth-child(even) td{background:#faf6ec;}
+
+  .matchcols{display:flex;gap:30px;flex-wrap:wrap;font-family:Arial,sans-serif;font-size:.95em;}
+  .matchcols ol{min-width:180px;}
+  .matchcols ol{flex:1;padding-left:20px;}
+  .matchcols li{margin-bottom:10px;}
+
+  .grammarbox{
+    background:#eef3ee;
+    border:1px solid var(--sage);
+    border-radius:8px;
+    padding:16px 20px;
+    font-family:Arial,sans-serif;
+    font-size:.92em;
+  }
+  .grammarbox h3{margin-top:0;color:var(--navy);}
+  .grammarbox table th{background:var(--sage);}
+
+  .blank{
+    display:inline-block;border-bottom:2px solid var(--navy);
+    min-width:90px;text-align:center;font-weight:bold;color:var(--coral);
+  }
+
+  .badge{
+    display:inline-block;font-family:Arial,sans-serif;font-size:.72em;font-weight:bold;
+    padding:2px 8px;border-radius:12px;color:#fff;margin-left:6px;
+  }
+  .badge.pos{background:var(--sage);}
+  .badge.neg{background:var(--coral);}
+  .badge.q{background:var(--gold);}
+
+  .seq-item{
+    background:#fff;border:1px solid var(--line);border-radius:6px;
+    padding:8px 12px;margin-bottom:8px;display:flex;gap:12px;align-items:flex-start;
+    font-family:Arial,sans-serif;font-size:.93em;
+  }
+  .seq-box{
+    border:2px solid var(--navy);border-radius:4px;width:34px;height:28px;flex-shrink:0;
+  }
+
+  .instruction{font-family:Arial,sans-serif;font-size:.9em;color:#555;}
+  .translate-btn{
+    display:inline-block;margin-left:8px;font-family:Arial,sans-serif;font-size:.72em;font-weight:bold;
+    background:var(--sage);color:#fff;border:none;border-radius:12px;padding:2px 10px;cursor:pointer;
+    vertical-align:middle;
+  }
+  .translate-btn:hover{background:#688b71;}
+  .id-translation{
+    display:none;color:var(--navy);font-style:italic;background:#f2f6f2;
+    border-left:3px solid var(--sage);padding:6px 10px;margin-top:6px;border-radius:4px;
+  }
+
+  footer{
+    text-align:center;font-family:Arial,sans-serif;font-size:.8em;color:#888;margin-top:40px;
+  }
+
+  @media (max-width:600px){
+    .sheet{padding:16px 14px;}
+    header.top{padding:18px 16px;}
+    header.top h1{font-size:1.25em;}
+    header.top p{font-size:.85em;}
+
+    .idbox{padding:12px 14px;gap:10px 18px;font-size:.85em;}
+    .idbox span{min-width:0;flex:1 1 120px;}
+
+    .groupbanner{padding:12px 14px;font-size:.88em;}
+
+    .stage{margin-top:26px;}
+    .stage h2{font-size:1.12em;}
+    .stage .desc{font-size:.84em;}
+
+    .task{padding:14px 14px;}
+    .task-title{font-size:.95em;}
+
+    .storybox{padding:12px 14px;font-size:.92em;}
+
+    .pemantik{padding:14px 16px;}
+    .pemantik ol{padding-left:18px;}
+
+    .matchcols{gap:16px;flex-direction:column;}
+
+    .grammarbox{padding:12px 14px;font-size:.85em;}
+
+    table{min-width:340px;font-size:.82em;}
+    table th,table td{padding:6px 6px;}
+
+    .seq-item{font-size:.86em;padding:8px 10px;gap:8px;}
+    .seq-box{width:28px;height:24px;}
+
+    .instruction{font-size:.85em;}
+    .translate-btn{font-size:.7em;padding:2px 8px;margin-left:4px;}
+  }
+
+  @media print{
+    .translate-btn{display:none;}
+    .id-translation{display:none !important;}
+  }
+</style>
+</head>
+<body class="notranslate" oncopy="return false" oncut="return false" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
+<header class="top">
+  <h1>📖 Worksheet: Narrative Text</h1>
+  <p>Genre-Based Approach — Building Knowledge of Field (Cinderella) &amp; Joint Construction of Text (Pinocchio)</p>
+</header>
+
+<div class="sheet">
+
+  <div class="groupbanner">
+    <b>📋 General Instructions</b><br>
+    Work in groups of 4–5 students. Complete all your answers <b>on paper</b>, not on the screen. Discuss each part together with your group before writing your final answers.
+    <button class="translate-btn" onclick="toggleTranslate(this)">🇮🇩 Translate</button>
+    <div class="id-translation">Kerjakan secara berkelompok (4–5 siswa). Tulis semua jawaban di kertas, bukan di layar. Diskusikan setiap bagian bersama kelompokmu sebelum menuliskan jawaban akhir.</div>
+  </div>
+
+  <!-- ================= WARM-UP QUESTIONS ================= -->
+  <div class="stage">
+    <span class="stage-label">WARMING UP</span>
+    <h2>Warm-up Questions</h2>
+    <div class="desc">
+      Discuss this part with your group, then write your answers on paper.
+      <button class="translate-btn" onclick="toggleTranslate(this)">🇮🇩 Translate</button>
+      <div class="id-translation">Diskusikan bagian ini bersama kelompokmu, lalu tulis jawaban di kertas.</div>
+    </div>
+    <div class="pemantik">
+      <ol>
+        <li>Do you like fairy tales? What is your favorite story?
+          <span class="answer-line"></span>
+        </li>
+        <li>Have you ever read or watched <i>Cinderella</i> or <i>Pinocchio</i>? What do you remember about them?
+          <span class="answer-line"></span>
+        </li>
+        <li>In your opinion, what makes a story interesting to read?
+          <span class="answer-line"></span>
+        </li>
+        <li>A narrative text tells about an event that <b>already happened</b>. What tense do you think we use to tell it — present, past, or future?
+          <span class="answer-line"></span>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ================= GRAMMAR FOCUS ================= -->
+  <div class="stage">
+    <span class="stage-label">LANGUAGE FOCUS</span>
+    <h2>Simple Past Tense</h2>
+    <div class="desc">
+      Narrative texts always use Simple Past Tense. Study the three forms below together with your group.
+      <button class="translate-btn" onclick="toggleTranslate(this)">🇮🇩 Translate</button>
+      <div class="id-translation">Narrative text selalu menggunakan Simple Past Tense. Pelajari dulu ketiga bentuknya di bawah ini bersama kelompokmu.</div>
+    </div>
+    <div class="grammarbox">
+      <h3>🧩 Simple Past Tense Formula</h3>
+      <div class="table-scroll"><table>
+        <tr><th>Form</th><th>Formula</th><th>Example</th></tr>
+        <tr><td><b>(+) Positive</b></td><td>S + Verb 2</td><td>Cinderella <i>cleaned</i> the house.</td></tr>
+        <tr><td><b>(–) Negative</b></td><td>S + did not (didn't) + Verb 1</td><td>She <i>did not go</i> to the party at first.</td></tr>
+        <tr><td><b>(?) Interrogative</b></td><td>Did + S + Verb 1 + ?</td><td><i>Did</i> Cinderella <i>lose</i> her shoe?</td></tr>
+        <tr><td>Nominal (to be)</td><td>S + was/were + ...</td><td>The prince <i>was</i> very handsome.</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <!-- ================= BKOF: CINDERELLA ================= -->
+  <div class="stage">
+    <span class="stage-label">BUILDING KNOWLEDGE OF THE FIELD</span>
+    <h2>Text 1 — Cinderella</h2>
+    <div class="desc">
+      Read the following text carefully with your group, then discuss and complete the tasks below on paper.
+      <button class="translate-btn" onclick="toggleTranslate(this)">🇮🇩 Translate</button>
+      <div class="id-translation">Bacalah teks berikut dengan saksama bersama kelompokmu, lalu diskusikan dan kerjakan tugas-tugas di bawahnya di kertas.</div>
+    </div>
+
+    <div class="storybox">
+      <p><span class="parano">Orientation</span><br>
+      Once upon a time, there lived a beautiful girl named Cinderella. She lived with her stepmother and two stepsisters, who always treated her badly. Every day, Cinderella cooked, cleaned, and washed the clothes for her whole family.</p>
+
+      <p><span class="parano">Complication</span><br>
+      One day, the king invited every young lady in the kingdom to a grand ball, because the prince wanted to choose a wife. Cinderella's stepmother and stepsisters got ready to go, but they did not allow Cinderella to come. Cinderella felt very sad and cried in the garden. Suddenly, a fairy godmother appeared. She waved her magic wand and turned a pumpkin into a beautiful carriage. She also changed Cinderella's old dress into a gorgeous gown and gave her a pair of glass slippers. However, the fairy godmother warned her, "You must leave the ball before midnight, or the magic will disappear."</p>
+
+      <p><span class="parano">Complication</span><br>
+      At the ball, the prince danced with Cinderella all night, and he fell in love with her. Cinderella was so happy that she almost forgot the warning. When the clock started to strike twelve, she quickly ran down the palace stairs. In her hurry, she dropped one of her glass slippers.</p>
+
+      <p><span class="parano">Resolution</span><br>
+      The next day, the prince searched the whole kingdom for the owner of the glass slipper. When he arrived at Cinderella's house, the slipper fitted her foot perfectly. The prince recognized her immediately. He married Cinderella, and they lived happily ever after.</p>
+    </div>
+
+    <!-- Task 1 comprehension -->
+    <div class="task">
+      <div class="task-title"><span class="num">1</span>Comprehension Check</div>
+      <p class="instruction">
+        Answer these questions based on the text. Discuss each answer with your group before writing it on paper.
+        <button class="translate-btn" onclick="toggleTranslate(this)">🇮🇩 Translate</button>
+        <span class="id-translation" style="display:block;">Jawablah pertanyaan-pertanyaan berikut berdasarkan teks. Diskusikan tiap jawaban bersama kelompokmu sebelum menuliskannya di kertas.</span>
+      </p>
+      <ol style="font-family:Arial,sans-serif;font-size:.92em;">
+        <li>Who did Cinderella live with? <span class="answer-line"></span></li>
+        <li>Why did Cinderella's stepmother not allow her to go to the ball? <span class="answer-line"></span></li>
+        <li>Who helped Cinderella get ready for the ball? <span class="answer-line"></span></li>
+        <li>What warning did the fairy godmother give her? <span class="answer-line"></span></li>
+        <li>How did the prince find Cinderella again? <span class="answer-line"></span></li>
+      </ol>
+    </div>
+
+    <!-- Task 2 generic structure matching -->
+    <div class="task">
+      <div class="task-title"><span class="num">2</span>Matching: Generic Structure</div>
+      <p class="instruction">
+        Match the text structure (column A) with its explanation (column B). Write the letter in the blank. Discuss your answers with your group.
+        <button class="translate-btn" onclick="toggleTranslate(this)">🇮🇩 Translate</button>
+        <span class="id-translation" style="display:block;">Jodohkan bagian struktur teks (kolom A) dengan penjelasannya (kolom B). Tulis hurufnya pada titik-titik. Diskusikan jawabanmu bersama kelompok.</span>
+      </p>
+      <div class="matchcols">
+        <ol type="1">
+          <li>Orientation ( <span class="answer-line" style="min-width:30px;display:inline-block;"></span> )</li>
+          <li>Complication ( <span class="answer-line" style="min-width:30px;display:inline-block;"></span> )</li>
+          <li>Resolution ( <span class="answer-line" style="min-width:30px;display:inline-block;"></span> )</li>
+        </ol>
+        <ol type="A">
+          <li>The part that tells how the problem is solved and how the story ends.</li>
+          <li>The part that introduces the characters, time, and place of the story.</li>
+          <li>The part that tells how a problem arises for the main character.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Task 3 vocabulary matching -->
+    <div class="task">
+      <div class="task-title"><span class="num">3</span>Matching: Vocabulary</div>
+      <p class="instruction">
+        Match the word from the text with its meaning. Work together with your group.
+        <button class="translate-btn" onclick="toggleTranslate(this)">🇮🇩 Translate</button>
+        <span class="id-translation" style="display:block;">Jodohkan kata dari teks dengan artinya. Kerjakan bersama kelompokmu.</span>
+      </p>
+      <div class="matchcols">
+        <ol type="1">
+          <li>gown ( <span class="answer-line" style="min-width:30px;display:inline-block;"></span> )</li>
+          <li>carriage ( <span class="answer-line" style="min-width:30px;display:inline-block;"></span> )</li>
+          <li>kingdom ( <span class="answer-line" style="min-width:30px;display:inline-block;"></span> )</li>
+          <li>appeared ( <span class="answer-line" style="min-width:30px;display:inline-block;"></span> )</li>
+          <li>fitted ( <span class="answer-line" style="min-width:30px;display:inline-block;"></span> )</li>
+        </ol>
+        <ol type="A">
+          <li>came into view suddenly</li>
+          <li>a country ruled by a king or queen</li>
+          <li>an elegant, fancy dress</li>
+          <li>matched the correct size</li>
+          <li>a horse-drawn vehicle for travel</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Task 4 categorize verbs -->
+    <div class="task">
+      <div class="task-title"><span class="num">4</span>Categorizing: Regular vs Irregular Verbs</div>
+      <p class="instruction">
+        Find 8 past-tense verbs (Verb 2) in the Cinderella text, then sort them into the table: <b>Regular Verb</b> (ends in -ed) or <b>Irregular Verb</b> (irregular form). Discuss with your group and write your answers on paper.
+        <button class="translate-btn" onclick="toggleTranslate(this)">🇮🇩 Translate</button>
+        <span class="id-translation" style="display:block;">Temukan 8 kata kerja berbentuk lampau (Verb 2) di dalam teks Cinderella, lalu kelompokkan ke dalam tabel: Regular Verb (berakhiran -ed) atau Irregular Verb (bentuk tidak beraturan). Diskusikan bersama kelompokmu dan tulis jawaban di kertas.</span>
+      </p>
+      <div class="table-scroll"><table>
+        <tr><th>Regular Verb (Verb 1 → Verb 2 + -ed)</th><th>Irregular Verb (Verb 1 → Verb 2)</th></tr>
+        <tr><td style="height:36px;"></td><td></td></tr>
+        <tr><td style="height:36px;"></td><td></td></tr>
+        <tr><td style="height:36px;"></td><td></td></tr>
+        <tr><td style="height:36px;"></td><td></td></tr>
+      </table></div>
+    </div>
+
+    <!-- Task 5 sequencing -->
+    <div class="task">
+      <div class="task-title"><span class="num">5</span>Sequencing Events</div>
+      <p class="instruction">
+        Arrange the following events in the correct order according to the Cinderella story. Write numbers 1–5 in the boxes. Discuss the order with your group.
+        <button class="translate-btn" onclick="toggleTranslate(this)">🇮🇩 Translate</button>
+        <span class="id-translation" style="display:block;">Urutkan kejadian berikut sesuai isi cerita Cinderella. Tulis angka 1–5 di dalam kotak. Diskusikan urutannya bersama kelompokmu.</span>
+      </p>
+      <div class="seq-item"><div class="seq-box"></div> The prince found Cinderella and married her.</div>
+      <div class="seq-item"><div class="seq-box"></div> Cinderella lived with her cruel stepmother and stepsisters.</div>
+      <div class="seq-item"><div class="seq-box"></div> Cinderella ran away at midnight and lost her glass slipper.</div>
+      <div class="seq-item"><div class="seq-box"></div> The fairy godmother turned a pumpkin into a carriage.</div>
+      <div class="seq-item"><div class="seq-box"></div> The king held a grand ball for the prince to find a wife.</div>
+    </div>
+  </div>
+
+  <!-- ================= JCOT: PINOCCHIO ================= -->
+  <div class="stage">
+    <span class="stage-label">JOINT CONSTRUCTION OF TEXT</span>
+    <h2>Text 2 — Pinocchio</h2>
+    <div class="desc">
+      Together with your group, read, complete, and analyze the following Pinocchio text. Discuss each part before writing your answers on paper.
+      <button class="translate-btn" onclick="toggleTranslate(this)">🇮🇩 Translate</button>
+      <div class="id-translation">Bersama kelompokmu, baca, lengkapi, dan analisis teks Pinocchio berikut. Diskusikan setiap bagian sebelum menuliskan jawaban di kertas.</div>
+    </div>
+
+    <div class="storybox">
+      <p><span class="parano">Orientation</span><br>
+      Once upon a time, an old woodcarver named Geppetto <span class="blank">(1) ______</span> (make) a wooden puppet and named it Pinocchio. Geppetto <span class="blank">(2) ______</span> (love) the puppet like his own son. That night, he <span class="blank">(3) ______</span> (wish) upon a star for Pinocchio to become a real boy. Suddenly, a Blue Fairy <span class="blank">(4) ______</span> (appear) and brought the puppet to life. However, she told him that he could only become a real boy if he proved himself brave, truthful, and unselfish.</p>
+
+      <p><span class="parano">Complication</span><br>
+      On his way to school, Pinocchio <span class="blank">(5) ______</span> (meet) a sly fox and a cat. They <span class="blank">(6) ______</span> (not / tell) him the truth about their plan and tricked him into joining a puppet show instead of studying. Later, whenever Pinocchio <span class="blank">(7) ______</span> (tell) a lie, his nose <span class="blank">(8) ______</span> (grow) longer. One night, he even <span class="blank">(9) ______</span> (go) to an island where naughty boys turned into donkeys, and he almost did not escape.</p>
+
+      <p><span class="parano">Resolution</span><br>
+      When Pinocchio finally <span class="blank">(10) ______</span> (find out) that Geppetto was trapped inside a giant whale, he <span class="blank">(11) ______</span> (decide) to save him bravely. He <span class="blank">(12) ______</span> (jump) into the sea and rescued his father. Because of his courage and honesty, the Blue Fairy turned him into a real boy at last.</p>
+    </div>
+
+    <!-- Task 1 cloze already integrated above -->
+    <div class="task">
+      <div class="task-title"><span class="num">1</span>Complete the text above with the correct Simple Past Tense form of the word in brackets.</div>
+      <p class="instruction">
+        💡 Note: number 6 must be in the <b>negative</b> form. Work together with your group and write your answers on paper.
+        <button class="translate-btn" onclick="toggleTranslate(this)">🇮🇩 Translate</button>
+        <span class="id-translation" style="display:block;">💡 Perhatikan: nomor 6 harus dalam bentuk negative. Kerjakan bersama kelompokmu dan tulis jawaban di kertas.</span>
+      </p>
+    </div>
+
+    <!-- Task 2 comprehension -->
+    <div class="task">
+      <div class="task-title"><span class="num">2</span>Comprehension Check</div>
+      <p class="instruction">
+        Answer these questions based on the text. Discuss with your group before writing your answers on paper.
+        <button class="translate-btn" onclick="toggleTranslate(this)">🇮🇩 Translate</button>
+        <span class="id-translation" style="display:block;">Jawablah pertanyaan-pertanyaan berikut berdasarkan teks. Diskusikan bersama kelompokmu sebelum menulis jawaban di kertas.</span>
+      </p>
+      <ol style="font-family:Arial,sans-serif;font-size:.92em;">
+        <li>Who made Pinocchio? <span class="answer-line"></span></li>
+        <li>What happened to Pinocchio's nose when he lied? <span class="answer-line"></span></li>
+        <li>Who tricked Pinocchio on his way to school? <span class="answer-line"></span></li>
+        <li>How did Pinocchio finally become a real boy? <span class="answer-line"></span></li>
+      </ol>
+    </div>
+
+    <!-- Task 3 categorize sentence forms -->
+    <div class="task">
+      <div class="task-title"><span class="num">3</span>Categorizing Sentences (+/–/?)</div>
+      <p class="instruction">
+        Write the label <b>Positive</b>, <b>Negative</b>, or <b>Interrogative</b> in the box next to each sentence. Discuss with your group.
+        <button class="translate-btn" onclick="toggleTranslate(this)">🇮🇩 Translate</button>
+        <span class="id-translation" style="display:block;">Tulis label Positive, Negative, atau Interrogative pada kotak di samping tiap kalimat. Diskusikan bersama kelompokmu.</span>
+      </p>
+      <div class="table-scroll"><table>
+        <tr><th>Sentence</th><th>Category</th></tr>
+        <tr><td>Geppetto made a wooden puppet.</td><td></td></tr>
+        <tr><td>The fox and the cat did not tell him the truth.</td><td></td></tr>
+        <tr><td>Did Pinocchio save his father from the whale?</td><td></td></tr>
+        <tr><td>Pinocchio did not go to school that day.</td><td></td></tr>
+        <tr><td>Did the Blue Fairy bring the puppet to life?</td><td></td></tr>
+      </table></div>
+    </div>
+
+    <!-- Task 4 matching characters -->
+    <div class="task">
+      <div class="task-title"><span class="num">4</span>Matching Characters and Their Roles</div>
+      <p class="instruction">
+        Match each character with their role in the story. Discuss with your group.
+        <button class="translate-btn" onclick="toggleTranslate(this)">🇮🇩 Translate</button>
+        <span class="id-translation" style="display:block;">Jodohkan setiap tokoh dengan perannya dalam cerita. Diskusikan bersama kelompokmu.</span>
+      </p>
+      <div class="matchcols">
+        <ol type="1">
+          <li>Geppetto ( <span class="answer-line" style="min-width:30px;display:inline-block;"></span> )</li>
+          <li>The Blue Fairy ( <span class="answer-line" style="min-width:30px;display:inline-block;"></span> )</li>
+          <li>The Fox and the Cat ( <span class="answer-line" style="min-width:30px;display:inline-block;"></span> )</li>
+          <li>Pinocchio ( <span class="answer-line" style="min-width:30px;display:inline-block;"></span> )</li>
+        </ol>
+        <ol type="A">
+          <li>The wooden puppet who wanted to become a real boy</li>
+          <li>The tricksters who deceived Pinocchio</li>
+          <li>The magical being who brought Pinocchio to life</li>
+          <li>The old woodcarver who made Pinocchio</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Task 5 sequencing jumbled sentences -->
+    <div class="task">
+      <div class="task-title"><span class="num">5</span>Sequencing Jumbled Sentences</div>
+      <p class="instruction">
+        Arrange the following sentences into the correct story order. Write numbers 1–5 in the boxes. Discuss the order with your group.
+        <button class="translate-btn" onclick="toggleTranslate(this)">🇮🇩 Translate</button>
+        <span class="id-translation" style="display:block;">Susun kalimat-kalimat berikut menjadi urutan cerita yang benar. Tulis angka 1–5 di kotak. Diskusikan urutannya bersama kelompokmu.</span>
+      </p>
+      <div class="seq-item"><div class="seq-box"></div> Pinocchio jumped into the sea and saved Geppetto from the whale.</div>
+      <div class="seq-item"><div class="seq-box"></div> Geppetto carved a wooden puppet and named him Pinocchio.</div>
+      <div class="seq-item"><div class="seq-box"></div> The Blue Fairy turned Pinocchio into a real boy.</div>
+      <div class="seq-item"><div class="seq-box"></div> The fox and the cat tricked Pinocchio on his way to school.</div>
+      <div class="seq-item"><div class="seq-box"></div> The Blue Fairy appeared and brought the puppet to life.</div>
+    </div>
+  </div>
+
+  <!-- ================= REFLECTION ================= -->
+  <div class="stage">
+    <span class="stage-label">REFLECTION</span>
+    <h2>Reflection</h2>
+    <div class="desc">
+      Reflect individually on today's lesson first, then share your thoughts with your group.
+      <button class="translate-btn" onclick="toggleTranslate(this)">🇮🇩 Translate</button>
+      <div class="id-translation">Refleksikan secara individu tentang pelajaran hari ini, lalu bagikan pemikiranmu kepada kelompokmu.</div>
+    </div>
+    <div class="task">
+      <ol style="font-family:Arial,sans-serif;font-size:.92em;">
+        <li>What did you learn today about narrative text? <span class="answer-line"></span></li>
+        <li>Which part of Simple Past Tense (positive, negative, or interrogative) is still difficult for you? <span class="answer-line"></span></li>
+      </ol>
+    </div>
+  </div>
+
+  <footer>Worksheet Narrative Text · Genre-Based Approach (BKOF → JCOT) · Simple Past Tense Focus</footer>
+</div>
+
+<script>
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if((e.ctrlKey || e.metaKey) && (k === 'c' || k === 'x' || k === 'a' || k === 'p')){
+    e.preventDefault();
+  }
+});
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('cut', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+
+function toggleTranslate(btn){
+  var box = btn.nextElementSibling;
+  if(!box) return;
+  var visible = box.style.display === "block" || box.style.display === "inline";
+  if(visible){
+    box.style.display = "none";
+    btn.textContent = "🇮🇩 Translate";
+  } else {
+    box.style.display = "block";
+    btn.textContent = "🇬🇧 Hide translation";
+  }
+}
+</script>
+
+</body>
+</html>
